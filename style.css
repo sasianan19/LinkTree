@@ -1,7 +1,70 @@
-body {
-	background-color:Lavender;
-	color:darkslategray;
-
+.link {
+	text-decoration: none;
+	color: tan;
+}
+.link:hover {
+	color: peru;
 }
 
+#homeBody {
+	background-image: url(eleni-koureas-uXouToDHxPU-unsplash.jpg);
+	height: 500px;
+	background-position: center;
+	background-repeat: repeat;
+	color: peachpuff;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+#homeName {
+	color: lavender;
+}
 
+.pageBody {
+	background-color: palegoldenrod;
+}
+
+.info,
+.form {
+	font-family: "Times New Roman", Times, serif;
+	color: sienna;
+}
+
+.heading,
+.form-check-label,
+.form-control {
+	color: brown;
+}
+
+.credentials,
+.letter,
+.contactOutput {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: chocolate;
+}
+
+.inputPrint {
+	color: lightcoral;
+	font-weight: 500;
+}
+
+#submitBtn {
+	background: url(johnny-mcclung-uYTKzVp8loQ-unsplash.jpg);
+	color: palegoldenrod;
+	border-radius: 10px;
+	width: 50%;
+	height: 50px;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+}

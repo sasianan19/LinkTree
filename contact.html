@@ -5,7 +5,7 @@
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
-		<style>
+		<style> 
 			label {
 				display:block;
 				font-size:14px;
@@ -14,30 +14,35 @@
 			input {
 				display:block;
 			}
-		</style>
+		</style> <!-- I know my exam feedback said NO inline styling, but I'm pretty sure 
+					the inline styling I have on my pages was part of the LinkTree page instructions (depending on page)? 
+					If not, I understand the point docks o_o!!-->
 	</head>
-	<body style="background-color:Lavender"> 
-		<h1 style="text-align:center;">Contact Form</h1>
+	<body class="pageBody"> 
+		<h1 class="heading" style="text-align:center">Contact Form</h1>
 
 		<div class="container">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-				  <li class="breadcrumb-item"><a href="resume.html">Resume</a></li>
-				  <li class="breadcrumb-item"><a href="cover.html">Cover Letter</a></li>
+				  <li class="breadcrumb-item"><a class="link" href="resume.html">Resume</a></li>
+				  <li class="breadcrumb-item"><a class="link" href="cover.html">Cover Letter</a></li>
 				  <li class="breadcrumb-item active" aria-current="page">Contact Form</li>
+				  <li class="breadcrumb-item"><a class="link" href="index.html">HOME</a></li>
 				</ol>
 		 	</nav>
+		
 
-			 <form>
-				<div class="row">
-					<div class="col-md-9">
+			 <form class="form">
+			    <div class="row">
+				<div id="input" class="column">
+					<div class="col-8 col-md-5">
 						<div class="form-group">
 							<label for="first name">First Name:</label>
-							<input type="text" class="form-control" id="first">
+							<input type="text" class="form-control" id="firstN">
 						</div>
 						<div class="form-group">
 							<label for="last name">Last Name:</label>
-							<input type="text" class="form-control" id="last">
+							<input type="text" class="form-control" id="lastN">
 						</div>
 			
 						<br>
@@ -49,7 +54,7 @@
 							<label for="at">@</label>
 						<div class="form-group">
 							<label for="email select"></label>
-							<select class="form-control" id="email2">
+							<select class="form-control" id="emailDrop">
 								<option value="hotmail">hotmail.com</option>
 								<option value="gmail">gmail.com</option>
 								<option value="yahoo">yahoo.com</option>
@@ -61,7 +66,7 @@
 
 						<div class="form-group">
 							<label for="phone">Phone Number:</label>
-							<input type="number" class="form-control" id="pn" placeholder="(000) 123-4567">
+							<input type="text" class="form-control" id="phoneNum" placeholder="(000) 123-4567"> 
 						</div>
 			
 						<br>
@@ -83,7 +88,7 @@
 
 						<div class="form-group">
 							<label for="secret answer">Secret Answer:</label>
-							<input type="password" class="form-control" id="password">
+							<input type="password" class="form-control" id="secretA">
 						</div>
 
 						<br>
@@ -91,7 +96,7 @@
 
 						<div class="form-group">
 							<label for="message">Message:</label>
-							<textarea class="form-control" id="msg" style="height:80px; width:120px;"></textarea>
+							<textarea class="form-control" id="message" style="height:80px; width:120px;"></textarea>
 						</div>
 
 						<br>
@@ -100,15 +105,15 @@
 							<label for="method">Preferred Contact Method:</label>
 
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="method" id="email2" value="email">					
+							<input class="form-check-input" type="radio" name="method" id="emailBtn" value="Email">					
 							<label class="form-check-label" for="email">Email</label>		
 						</div>	
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="method" id="phone" value="phone number">
-							<label class="form-check-label" for="phone">Phone Nuber</label>
+							<input class="form-check-input" type="radio" name="method" id="phoneBtn" value="Phone Number">
+							<label class="form-check-label" for="phone">Phone Number</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="method" id="no" value="no contact">
+							<input class="form-check-input" type="radio" name="method" id="noBtn" value="No Contact">
 							<label class="form-check-label" for="no">No Contact</label>
 						</div>
 
@@ -124,11 +129,12 @@
 								<option value="$35,000-$50,000">$35,000-$50,000</option>
 								<option value="$50,000 or more">$50,000 or more</option>
 							</select>
+						</div>
 			
 						<br>
 						<br>
 
-						<div class="form-check">
+						<div class="form-check-2">
 							<label class="form-check-label" for="checkbox">Please check to confirm information is accurate:</label>
 							<input class="form-check-input" type="checkbox" id="confirm">
 						</div>
@@ -136,19 +142,57 @@
 						<br>
 						<br>
 			
-						<button type="button">Submit</button>
+						<button type="button" id="submitBtn" onclick="submitForm()">Submit</button>
 					</div>
 				</div>
+			
+				
+				<div id="output" class="column contactOutput col-4 col-md-5">
+					<div> First Name:
+						<p class="inputPrint" id="firstNa"></p>
+					</div>
+					<div> Last Name:
+						<p class="inputPrint" id="lastNa"></p>
+					</div>
+					<div> Email:
+						<p class="inputPrint" id="emailAddr"> </p>
+					</div>
+					<div> Phone Number:
+						<p class="inputPrint" id="phoneNumb"> </p>
+					</div>
+					<div> Age:
+						<p class="inputPrint" id="ageYrs"></p>
+					</div>
+					<div> Secret Answer:
+						<p class="inputPrint" id="secretAn"> </p>
+					</div>
+					<div> Message:
+						<p class="inputPrint" id="messageBox"> </p>
+					</div>
+					<div> Preferred Method of Contact:
+						<p class="inputPrint" id="contactPref"> </p>
+					</div>
+					<div> Income:
+						<p class="inputPrint" id="incomeAmt"></p>
+					</div>
+					<div> Confirmed?
+						<p class="inputPrint" id="confirmation"> </p>
+					</div>
+				</div>
+			 </div>
 			</form>
 			
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<nav class="nav flex-column">
-						<a class="nav-link active" href="contact.html">Contact Form</a>
-						<a class="nav-link" href="cover.html">Cover Letter</a>
-						<a class="nav-link" href="resume.html">Resume</a>
+						<a class="nav-link active link" href="contact.html">Contact Form</a>
+						<a class="nav-link link" href="cover.html">Cover Letter</a>
+						<a class="nav-link link" href="resume.html">Resume</a>
+						<a class="nav-link link" href="index.html">HOME</a>
 					</nav>
 				</div>
 			</div>
+		</body>
+		<script src="script.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
