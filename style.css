@@ -117,6 +117,10 @@
 	color: lavender;
 }
 
+.welcome {
+	color: black;
+}
+
 .pageBody {
 	background-color: whitesmoke;
 }
@@ -135,7 +139,8 @@
 
 .credentials,
 .letter,
-.contactOutput {
+.contactOutput,
+.gallery {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	color: grey;
 }
